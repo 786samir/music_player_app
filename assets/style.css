@@ -1,0 +1,1831 @@
+@keyframes translate{
+	from{
+		transform: translateX(0px);
+	}
+	to{
+		transform: translateX(-300px);
+	}
+}
+
+@keyframes resize{
+	from{
+		transform: scale(0.5);
+	}
+	to{
+		transform: scale(1);
+	}
+}
+
+@keyframes rotate{
+	from{
+		transform: rotate(0deg);
+	}
+
+	50%{
+		transform: rotate(45deg);
+
+	}
+	75%{
+		transform: rotate(0deg);
+	}
+
+	to{
+		transform: rotate(-45deg);
+	}
+}
+
+@keyframes rotate2{
+	from{
+		transform: rotate(0deg);
+	}
+
+	to{
+		transform: rotate(360deg);
+	}
+}
+
+
+
+/*------------------------Player-------------------------------*/
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Bebas Neue';
+	box-sizing: border-box;
+}
+
+body{
+	/*/*background: rgb(67,189,101);
+	background: radial-gradient(circle, rgba(67,189,101,1) 0%, rgba(1,171,146,0.43787937538296573) 53%, rgba(0,212,255,1) 94%);*/
+	background-color: rgba(103, 232, 144, 0.5);
+	
+}
+
+main{
+	width: 100vw;
+	display: flex;
+	height: auto;
+}
+
+
+
+/*---------------------------------Header-----------------------------------------*/
+header{
+	margin: 1% 2%;
+	/*border: 2px solid black;*/
+	height: 15vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.logo-and-name{
+	display: flex;
+	height: 100%;
+	width: 20%;
+	position: relative;
+}
+
+.logo-and-name .logo{
+	height: 100%;
+	width: 50%;
+	padding: 0;
+}
+
+.logo-and-name .logo:hover{
+	transform: scale(1.2);
+	animation: rotate 3s ease-in-out 1 ;
+}
+
+.logo-and-name .logo img{
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.logo-and-name .player-name{
+	height: 100%;
+	width: 40%;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	padding: 2px 5px;
+}
+.logo-and-name .player-name span{
+	background-color:transparent ;
+	color: black;
+	text-align: center;
+	border-radius: 10px;
+	padding: 1px 5px;
+	font-size: 110%;
+	font-weight: bold;
+	font-family:  'Bebas Neue';
+	letter-spacing:1%;
+}
+	
+.Favourites{
+	margin-top: 2%;
+	height: 20%;
+	width: 10%;
+	margin-left: -10%;
+	text-align: center;
+	cursor: pointer;
+}
+
+
+.Favourites span{
+	font-family:  'Bebas Neue';
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+.search_bar-section{
+	padding: 0;
+	margin-left: 0;
+	width: 40%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	
+}
+.search-bar{
+	height: 40%;
+	border: 2px solid black;
+	margin-left: 4%;
+	padding: 2px 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	position: relative;
+	border-radius: 40px;
+}
+
+.search-bar a{
+	margin-left: 0;
+	padding: 0;
+	background: transparent;
+	text-decoration: none;
+	color: black;
+}
+.search-bar .fas{
+	margin-top: 5px;
+	padding: 0;
+	height: 100%;
+	width: 10%;
+	background: transparent;
+	font-size: 1.2rem;
+	position: relative;
+}
+.search-bar .fas:hover{
+	color: white;
+}
+.search-bar input{
+	height: 100%;
+	width: 85%;
+	margin: 0px 10px;
+	border: transparent;
+	outline: none;
+	background-color: transparent;
+}
+.search-bar a:hover .google-search{
+	display: block;
+}
+
+.google-search{
+	top: -10%;
+	left: 20%;
+	height: 400%;
+	width: 70%;
+	position: absolute;
+	display: none;
+}
+
+.google-search img{
+	height: 100%;
+	width: 100%;
+	border-radius: 30%;
+
+}
+
+.notification{
+	padding: 2%;
+	height: 50%;
+	width: 10%;
+	text-align: center;
+	font-size: 1.2rem;
+	position: relative;
+}
+
+
+ .notification .dot{
+	top: 30%;
+	left: 55%;
+	height: 4px;
+	width: 4px;
+	border-radius: 50%;
+	background-color: red;
+	position: absolute;
+}
+
+.notification .fas{
+	color: black;
+}
+
+.user-image{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 20%;
+}
+.user-image img{
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+}
+
+section{
+	margin: 2% 5%;
+	height: 40vh;
+	width: 100%;
+	padding: 0;
+}
+
+
+/*---------------------------------Body-Section-----------------------------------------*/
+
+
+.body-section{
+	width: 60%;
+}
+
+/*------------------------------------Carousel-----------------------------------------*/
+
+.carousel{
+	padding: 0;
+	height: 30vh;
+	width: 100%;
+}
+
+
+.carousel-container{
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	overflow: hidden;
+	
+}
+.carousel-container > div{
+	margin: 0% 1%;
+	height: 100%;
+	width: 32%;
+	transition: all 1s ease-in-out;
+}
+.carousel-container img{
+	height: 100%;
+	width: 100%;
+  animation: resize 3s ease-in-out infinite alternate;
+}
+
+.carousel-container > div:hover{
+	transform: scale(1.2);
+}
+
+/*------------------------------------Latest-release-----------------------------------------*/
+
+.latest-release{
+	width: 100%;
+	height: 40vh;
+	padding:0;
+}
+
+ .latest-release-container{
+	height:90%;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.latest-release-container .song{
+	margin: 2% 3%;
+	height: 40%;
+	width: 40%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	border-radius: 10px;
+}
+.latest-release-container .song:hover{
+	background-color: lightcyan;
+}
+
+.play-btn{
+	position: absolute;
+	top: 30%;
+	left: 10%;
+	background: transparent;
+	font-size: 200%;
+	color: transparent;
+}
+.play-btn a{
+	text-decoration: none;
+	background: transparent;
+	color: transparent;
+}
+
+.play-btn .fas{
+background: transparent;
+}
+
+/*puase btn*/
+#puase-btn{
+	position: absolute;
+	top: 35%;
+	left: 10%;
+	background: transparent;
+	font-size: 100%;
+	color: red;
+	visibility: hidden;
+}
+#puase-btn .far{
+	font-size: 1.7rem;
+}
+
+#puase-btn:target{
+	visibility: visible;
+}
+
+.latest-release-container .song .singer-image{
+	height: 100%;
+	width: 30%;
+}
+
+.latest-release-container .song .singer-image img{
+	height: 100%;
+	width: 100%;
+	border-radius: 10px;
+
+}
+
+.singer-image:hover{
+	opacity: 0.8;
+}
+
+.singer-image:hover .play-btn a{
+		color: red;
+}
+
+.latest-release-container .song .song-name-date{
+	margin-left: -18%;
+	height: 50%;
+	width: 20%;
+	text-align: center;
+}
+
+.latest-release-container .song .song-name-date .song-name span{
+	font-size: 0.7rem;
+	font-weight: 600;
+}
+
+.latest-release-container .song .song-name-date .song-date span{
+	font-size: 0.5rem;
+	font-weight: 0;
+}
+
+.latest-release-container .song .bars-duration{
+	margin-top: -10%;
+	height: 50%;
+	width: 20%;
+	text-align: center;
+}
+.latest-release-container .song .bars-duration .bars{
+	height: 50%;
+	width: 100%;
+}
+.latest-release-container .song .bars-duration .bars a{
+	color: black;
+}
+
+.latest-release-container .song .bars-duration .duration{
+	margin-top: 10%;
+	font-size: 0.5rem;
+	font-weight: 600;
+}
+
+#list-1{
+	position:absolute;
+	margin-left: -15%;
+	height: 100%;
+	width: 27%;
+	padding: 0.5%;
+	padding-top: 3%;
+	background-color: white;
+	text-align: justify;
+	display: flex;
+	flex-direction: column;
+	display: none;
+	border-radius: 10px;
+}
+
+.list .list-icon {
+	float: right;
+	text-decoration: none;
+	font-size: 0.7rem;
+	padding: 0;
+	margin: 0;
+	margin-top: -10%;
+	display: inline-block;
+	text-align: right;
+	background-color: transparent;
+}
+
+.list>ul{
+	height: auto;
+	width: 100%;
+	list-style: none;
+	text-align: justify;
+	background-color: transparent;
+}
+.list>ul li{
+	background-color: transparent;
+}
+
+.list .fas, .far{
+	padding: 0;
+	margin: 0;
+	font-size: 0.5rem;
+	line-height: 0.1rem;
+	background-color: transparent;
+
+}
+.list span{
+	padding: 0;
+	margin: 0;
+	font-size: 0.5rem;
+	background-color: transparent;
+}
+
+#list-1:target{
+	display: block;
+}
+
+#list-2{
+	position:absolute;
+	margin-left: -15%;
+	height: 100%;
+	width: 27%;
+	padding: 0.5%;
+	padding-top: 3%;
+	background-color: white;
+	text-align: justify;
+	display: flex;
+	flex-direction: column;
+	display: none;
+	border-radius: 10px;
+}
+#list-2:target{
+	display: block;
+}
+#list-3{
+	position:absolute;
+	margin-left: -15%;
+	height: 100%;
+	width: 27%;
+	padding: 0.5%;
+	padding-top: 3%;
+	background-color: white;
+	text-align: justify;
+	display: flex;
+	flex-direction: column;
+	display: none;
+	border-radius: 10px;
+}
+#list-3:target{
+	display: block;
+}
+#list-4{
+	position:absolute;
+	margin-left: -15%;
+	height: 100%;
+	width: 27%;
+	padding: 0.5%;
+	padding-top: 3%;
+	background-color: white;
+	text-align: justify;
+	display: flex;
+	flex-direction: column;
+	display: none;
+	border-radius: 10px;
+}
+#list-4:target{
+	display: block;
+}
+
+/*------------------------------------popular-artists-----------------------------------------*/
+
+
+.popular-artist{
+	padding: 0;
+	height: 75vh;
+	width: 100%;
+	margin-top: 7%;
+}
+
+/*artists*/
+
+.artists{
+	margin-top: 1%;
+	margin-bottom:2% ;
+	height: 30%;
+	width: 95%;
+	display: flex;
+	justify-content: space-between;
+
+}
+
+.artists .artist-1{
+	height: 100%;
+	width: 18%;
+	/*min-width: 100px;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+	margin: 1% 0%;
+}
+
+.artists .artist-1  .artist-image { 
+	height: 90%;
+	width: 100%;
+
+}
+
+.artists .artist-1  .artist-image a{
+	text-decoration: none;
+}
+
+.artists .artist-1 .artist-image a img{
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+}
+
+.artists .singer-name{
+	padding-top: 1%;
+	height: 10%;
+	width: 100%;
+	font-size: 0.6rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+}
+
+.play-btn-2{
+	position: absolute;
+	top: 30%;
+	left: 38%;
+	background: transparent;
+	font-size: 200%;
+	color: transparent;
+}
+
+.play-btn-2 .fas{
+background: transparent;
+}
+.artists .artist-1:hover .play-btn-2{
+		color: red;
+}
+
+/*Music-typs*/
+
+.music-types{
+	width: 95%;
+	margin-top: 2%;
+	height: 27%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.music-types .container{
+	height: 100%;
+	width: 33%;
+	position: relative;
+	overflow: hidden;
+}
+
+.music-types .container img{
+	height: 100%;
+	width: 100%;
+	transition: all 0.5s ease-in-out;
+}
+
+.music-types .container img:hover{
+		transform: scale(1.1);
+	
+}
+
+.music-types .container .type-of-music{
+	color: white;
+	position: absolute;
+	top: 38%;
+	left: 26%;
+	font-size: 1.5rem;
+	font-weight: bold;
+	background-color: transparent;
+	font-family: 'Bebas Neue', cursive;
+}
+
+/*stations*/
+
+.stations{
+	padding: 0% 1%;
+	margin-top: 0;
+	height: 27%;
+	width: 95%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: rgb(67,189,128);
+	background: linear-gradient(90deg, rgba(67,189,128,1) 0%, rgba(111,200,187,0.7432015042345064) 50%, rgba(0,212,255,1) 94%);
+}
+
+.outer-div{
+	height: 90%;
+	width: 20%;
+	/*border: 2px solid black;*/
+	background: rgb(63,94,251);
+	background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(70,138,252,0.44348161627932425) 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+.outer-div .fas{
+	font-size: 5rem;
+	color: lightblue;
+	animation: rotate2 3s ease-in-out infinite ;
+}
+
+.outer-div .name{
+	color: white;
+  font-size: 100%;
+	font-family: 'Bebas Neue', cursive;
+	font-weight: bold;
+	background-color: transparent;
+}
+
+.station-type{
+	height: 80%;
+	width: 12%;
+	position: relative;
+	background-color: transparent;
+}
+
+.station-type img{
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	opacity: 0.8;
+}
+
+.station-name{
+	color: black;
+	position: absolute;
+	top: 39%;
+	left: 30%;
+	font-size: 1rem;
+	font-weight: bold;
+	background-color: transparent;
+	font-family: 'Bebas Neue', cursive;
+}
+
+
+/*------------------------------------latest-english-----------------------------------------*/
+
+.latest-english{
+	margin-top: 5	%;
+	height: 30vh;
+	width: 95%;
+}
+
+.english-song-container{
+	height: 90%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 1%;
+}
+
+.english-song{
+	height: 100%;
+	width: 16%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	transition: all 1s ease-in-out;
+}
+.english-song:hover{
+	transform: scale(1.2);
+}
+
+.english-song .song-image{
+	height: 90%;
+	width: 100%;
+}
+.english-song .song-image img{
+	height: 100%;
+	width: 100%;
+}
+
+.english-song .song-name{
+	height: 5%;
+	width: 25%;
+	font-size: 0.6rem;
+	font-weight: bold;
+	align-items: center;
+	margin: 2% 0%;
+}
+
+.english-song .date{
+	height: 5%;
+	width: 40%;
+	font-size: 0.5rem;
+	align-items: center;
+
+}
+
+/*---------------------------------aside section song list------------------------*/
+
+aside{
+	display: inline-block;
+	width: 30%;
+	height: 100vh;
+	vertical-align: top;
+	margin-top: 0%;
+	margin-left: 5%;
+	margin-right: 2%;
+	padding: 1%;
+}
+
+#song-list{
+	width: 30%;
+	height: 100vh;
+	vertical-align: top;
+	margin-top: 4%;
+	margin-left: 5%;
+	margin-right: 2%;
+	padding: 1%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	/*border: 2px solid red;*/
+}
+
+#song-list .aside-header{
+	height: 5vh;
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+
+}
+
+.aside-header .name{
+	height: 100%;
+	width: 30%;
+	color: black;
+	font-size:1rem;
+	font-weight: bold;
+}
+
+.aside-header .btn{
+	height: inherit;
+	width: 20%;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	font-size: 0.8rem;
+}
+
+#queue-list{
+	position: absolute;
+	top: 70%;
+	left: -83%;
+	height: 230%;
+	width: 190%;
+	text-align: left;
+	background-color: white;
+	padding: 10%;
+	padding-bottom: 10%;
+	visibility: hidden;
+}
+
+#queue-list > div{
+	text-align: right;
+	background-color: transparent;
+}
+
+#queue-list a{
+	text-decoration: none;
+	font-size: 0.5rem;
+	color: black;
+	margin-top: -10px;
+	background-color: transparent;
+}
+
+#queue-list > ul{
+	list-style: none;
+	height: 100vh;
+	width:100%;
+	background-color: transparent;
+	line-height: 1.1rem;
+	overflow: auto;
+}
+#queue-list > ul li{
+	font-size: 0.7rem;
+	background-color: transparent;
+	font-weight: bold;
+	border-bottom: 1px solid black;
+}
+
+#queue-list .list-img{
+
+}
+
+#queue-list:target{
+	visibility: visible;
+}
+
+/*---------play list---------*/
+
+.song-list-main{
+	margin: 3% 0%;
+	padding: 0% 4%;
+	height: 100vh;
+	width: 100%;
+	min-width: 200px;
+	overflow: auto;
+}
+
+
+.song-list-main .song-container {
+	height: 10%;
+	width: 100%;
+	margin: 2% 1%;
+}
+
+.song-list-main .song-container  .list-song{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 2% 1%;
+}
+
+.song-list-main .song-container  .list-song:hover{
+	background-color: lightcyan;
+}
+
+.song-list-main .song-container .song-number{
+	width: 10%;
+}
+
+.song-list-main .song-container  .list-song .image-container{
+	height: 100%;
+	width: 30%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	vertical-align: middle;
+	margin-left: -50%;
+}
+
+
+.song-list-main .song-container .list-song .list-song-image{
+	height: 100%;
+	width: 60%;
+}
+
+.song-list-main .song-container  .list-song .list-song-image img{
+	height: 100%;
+	width: 100%;
+		border-radius: 5px;
+}
+
+.song-list-main.song-container  .list-song  .list-song-name-date{
+	height: 50%;
+	width: 30%;
+	text-align: center;
+}
+.song-list-main .song-container  .list-song  .list-song-name-date .list-song-name{
+	font-size: 0.6rem;
+	font-weight: bold;
+}
+.song-list-main .song-container  .list-song  .list-song-name-date .album-name{
+	font-size: 0.5rem;
+	font-weight: bold;
+}
+.song-list-main .song-container  .list-song .like-btn{
+	color: darkred;
+	margin-right: 5%;
+}
+
+.song-list-main .song-container  .list-song .like-btn .far{
+	font-size: 1rem;
+	border-radius: 50%;
+}
+.song-list-main .song-container .list-song .like-btn .far:hover{
+	background-color: red;
+}
+
+.play-btn-3{
+	position: absolute;
+	top: 30%;
+	left: 25%;
+	background: transparent;
+	font-size: 100%;
+	color: transparent;
+}
+
+.play-btn-3 .fas{
+background: transparent;
+}
+.song-list-main .song-container .list-song .image-container:hover .play-btn-3{
+		color: red;
+}
+
+
+/*aside -2*/
+#song-list-2{
+	display: none;
+}
+#song-list-2:target{
+	display: flex;
+}
+
+.show-list-icon{
+	position: absolute;
+	top: 20%;
+	left: 90%;
+	display: none;
+}
+
+.show-list-icon .fas{
+	font-size: 1.5rem;
+}
+
+/*---------------------------------audio control bar-------------------------------*/
+
+
+#song-control-bar{
+	top: 89%;
+	height: 11vh;
+	width: 100%;
+	background-color: #50d9de;
+	position: fixed;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	z-index: 2;
+	display: none;
+}
+
+#song-control-bar .part-1{
+		height: 100%;
+		width: 15%;	
+		margin-left: 1%;
+		background-color: transparent;
+}
+
+#song-control-bar .part-1 .current-song{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: transparent;
+}
+
+.current-song .image-container{
+	height: 100%;
+	width: 70%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: transparent;
+}
+
+.current-song .image-container .list-song-image{
+	padding: 4% 0%;
+	height: 100%;
+	width: 50%;
+	background-color: transparent;
+}
+
+.current-song .image-container  img{
+	height: 100%;
+	width: 100%;
+}
+
+.current-song .image-container .list-song-name-date{
+	height: 50%;
+	width: 30%;
+	text-align: center;
+	background-color: transparent;
+}
+
+.current-song .image-container .list-song-name-date .list-song-name{
+	font-size: 0.6rem;
+	font-weight: bold;
+	background-color: transparent;
+
+}
+.current-song .image-container .list-song-name-date .album-name{
+	font-size: 0.5rem;
+	font-weight: bold;
+	background-color: transparent;
+
+}
+
+.current-song  .like-btn{
+	margin-left: -10%;
+	height: 50%;
+	width: 20%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: transparent;
+}
+
+.current-song  .like-btn .far, 
+.current-song  .like-btn .fas{
+	font-size: 0.7rem;
+	background-color: transparent;
+}
+
+.part-2{
+	height: inherit;
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: transparent;
+
+}
+
+.part-2 .controls{
+	width: inherit;
+	height: 50%;
+	text-align: center;
+	background-color: transparent;
+	margin-top: 2%;
+}
+.part-2 .controls > ul{
+	list-style: none;
+	width: 100%;
+	height: inherit;
+	display: flex;
+	justify-content: space-between;
+	background-color: transparent;
+
+}
+.part-2 .controls > ul li{
+	background-color: transparent;
+}
+
+.part-2 .controls > ul li .fas{
+	font-size: 1rem;
+	background-color: transparent;
+
+}
+
+.part-2 .duration-bar{
+	display: flex;
+	height: 50%;
+	width: 100%;
+	align-items: center;
+	background-color: transparent;
+}
+
+.part-2 .duration-bar .duration-start,
+.part-2 .duration-bar .duration-end{
+	height: 50%;
+	width: 10%;
+	font-size: 0.5rem;
+	font-weight: bold;
+	margin: 0% 0%;
+	text-align: center;
+	background-color: transparent;
+
+}
+
+.part-2 .duration-bar .range-bar{
+	width: 100%;
+	background-color: transparent;
+
+}
+.part-2 .duration-bar .range-bar input{
+	width: 100%;
+	background-color: transparent;
+}
+.part-2 .duration-bar .range-bar input font{
+	background-color: transparent;
+}
+
+.part-3{
+	height: 100%;
+	width: 15%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background-color: transparent;
+}
+
+.part-3 >ul{
+	height: 50%;
+	width: 100%;
+	display: flex;
+	list-style: none;
+	justify-content: space-between;
+	background-color: transparent;
+}
+
+.part-3 >ul li{
+	background-color: transparent;
+	height: 100%;
+	width: 10%;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	background-color: transparent;
+}
+
+.part-3 >ul li .fas{
+	font-size: 1rem;
+	background-color: transparent;
+}
+
+.part-3 >ul li input{
+	width: 100%;
+	height: 20%;
+	background-color: transparent;
+}
+
+
+.part-3 >ul li input font{
+	height: 0;
+	width: 0;
+	background-color: transparent;
+}
+
+#song-control-bar a{
+	text-decoration: none;
+	background-color: transparent;
+	color: black;
+}
+
+#song-control-bar:target{
+	display: flex;
+}
+
+
+
+/*---------------------------------single artist-------------------------------*/
+
+
+.artist-flex{
+	width: 100%;
+	height: 60vh;
+	background-color: #75ebcb;
+	display: flex;
+}
+
+
+
+.artist-image-2 {
+	
+	background-position: center;
+	background-size: cover;
+	height: 100%;
+	width: 40%;
+	position: relative;
+	background-image: url(Photos/singer-3.jpg);
+}
+
+.color-overlay{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: rgb(117,235,203);
+	background:linear-gradient(to top, rgba(117, 235, 203, 100%) 10%, rgba(230, 103, 168, 0%) 59%);
+	opacity: 1;
+}
+
+.song-description-section{
+	margin: 1% 1%;
+	width: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.song-description-section .song-description{
+		width: 90%;
+		height: 60%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;		
+}
+
+.song-description-header{
+	width: 100%;
+	height: 20%;
+	display: flex;
+	justify-content: space-between;	
+}
+.discription{
+	width: 100%;
+	height: 60%;
+	text-align: justify;
+
+}
+.discription h5{
+	font-weight: 500;
+	margin: 1% 0%;	
+}
+
+.discription p{
+	font-size: 0.8rem;
+}
+
+.play-all-button{
+	width: 90%;
+	height: 30%;
+	display: flex;
+}
+
+.play-all-button .play-b{
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.play-all-button .play-b .btn{
+	height: 40%;
+	width: 70%;
+	background: rgb(100,58,180);
+	background: linear-gradient(90deg, rgba(100,58,180,0.7) 0%, rgba(253,29,29,0.7) 66%, rgba(95,252,69,0.7) 100%);
+	text-align: center;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
+.no-of-tracks{
+	margin: 1% 1%;
+	height: 20%;
+	width: 70%;
+	font-size: 0.6rem;
+	text-align: center;
+}
+.follow{
+	height: 20%;
+	width: 30%;
+}
+
+/*list-of-artist-songs*/
+
+.list-of-artist-songs{
+	margin-top: 5%;
+	height: 60vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+	padding: 1% 0%;
+}
+
+.list-of-artist-songs .song{
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #75ebcb;
+	margin: 0.4% 0%;
+	padding: 0.2% 0%;
+
+}
+.list-of-artist-songs .song:hover{
+	background-color: lightcyan;
+}
+
+.song-no-image-name{
+	display: flex;
+	height: 100%;
+	width: 20%;
+	font-size: 0.7rem;
+	font-weight: bold;
+	text-align: center;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.song-no-image-name .song-number{
+	height: 30%;
+	width: 15%;
+	font-size: 0.7rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+.song-no-image-name  .song-image-container{
+	height: 100%; 
+	width: 40%;
+	padding: 5px 6px	;
+}
+.song-no-image-name  .song-image-container img{
+	height: 100%;
+	width: 100%;
+
+}
+.song-name-singer{
+	margin-left: -10px;
+	height: 80%;
+	width: 40%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.song-name-singer .song-name{
+	font-size: 0.7rem;
+	font-weight: bold;
+}
+
+.song-name-singer  .singer-name{
+	font-size: 0.5rem;
+}
+
+.song .song-duration{
+	font-size: 0.7rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.like-and-add-btn{
+	height: 100%;
+	width: 10%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+}
+
+.like-and-add-btn .far,
+.like-and-add-btn .fas{
+	font-size: 1rem;
+}
+
+
+/*--------------------atrist-aside---------------------*/
+
+.artist-aside{
+	height: 150vh;
+	width: 100%;
+	vertical-align: top;
+}
+
+.similar-artist{
+	width: 100%;
+	height: 50%;
+	padding: 3%;
+	flex-wrap: wrap;
+}
+
+.similar-artist-list{
+	height: 90%;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+.heading{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 3% 0%;
+}
+.similar-artist-list{
+	padding: 5%;
+}
+
+.similar-artist-list .song{
+	margin: 1% 0%;
+	height: 20%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+
+.similar-artist-list .song:hover{
+	background-color: 	background-color: lightcyan;
+}
+
+.play-btn-4{
+	position: absolute;
+	top: 30%;
+	left: 10%;
+	background: transparent;
+	font-size: 100%;
+	color: transparent;
+}
+.play-btn-4 a{
+	text-decoration: none;
+	background: transparent;
+	color: transparent;
+}
+
+.play-btn-4 .fas{
+background: transparent;
+}
+
+/*puase btn*/
+#puase-btn{
+	position: absolute;
+	top: 35%;
+	left: 10%;
+	background: transparent;
+	font-size: 150%;
+	color: red;
+	visibility: hidden;
+}
+#puase-btn .far{
+	font-size: 1.7rem;
+}
+
+#puase-btn-4:target{
+	visibility: visible;
+}
+
+.similar-artist-list .song .singer-image{
+	height: 100%;
+	width: 30%;
+}
+
+.similar-artist-list .song:hover{
+	background-color: lightcyan;
+}
+
+.similar-artist-list .song .singer-image img{
+	height: 100%;
+	width: 70%;
+}
+
+.singer-image:hover .play-btn-4 a{
+		color: red;
+}
+
+.similar-artist-list .song .song-name-date{
+	margin-left: -50%;
+	height: 50%;
+	width: 20%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.similar-artist-list .song .song-name-date .song-name span{
+	font-size: 0.7rem;
+	font-weight: 600;
+}
+
+.similar-artist-list .song .song-name-date .song-date span{
+	font-size: 0.5rem;
+	font-weight: 0;
+}
+
+.similar-artist-list .song .bars-duration{
+	margin-top: -10%;
+	height: 50%;
+	width: 20%;
+	text-align: center;
+}
+.similar-artist-list .song .bars-duration .bars{
+	height: 50%;
+	width: 100%;
+}
+.similar-artist-list .song .bars-duration .bars a{
+	color: black;
+}
+
+.similar-artist-list .song .bars-duration .duration{
+	margin-top: 10%;
+	font-size: 0.5rem;
+	font-weight: 600;
+}
+
+/*recenly played*/
+
+.recetly-played{
+	height: 40vh;
+	padding: 2%;
+	margin-top:6% ;
+}
+.recetly-played-list{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.recetly-played-list .song-container{
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+}
+
+.recetly-played-list .song-container .list-song{
+	height: 20%;
+	width: 100%;
+}
+
+
+
+/*-------------------------Media Queris-------------------------*/
+
+
+@media screen and (max-width: 768px){
+	
+	#song-list, aside{
+			width: 100%;
+			margin-top: 10%;
+
+	}
+
+	main{
+		flex-direction: column;
+	}
+	
+	.body-section{
+	width: 100%;
+  }
+
+/*--------------for header---------------------*/
+	
+		header{
+			height: 10vh;
+			font-size: 0.8rem;
+			width: 100%	;
+		}
+		.logo-and-name .logo{
+			width: 80%;
+			height: 80%;
+		}
+
+    .Favourites{
+    		display: none;
+    }
+
+    .notification{
+    	font-size: 0.8rem;
+    }
+
+    .search-bar{
+    	display: none;
+    }
+
+		/*#song-list{
+		display: none;
+		}*/
+	
+		.user-image{
+		height: 70%;
+		width: 30%;
+	}
+
+/*------------artist page---------------*/
+	.artist-flex{
+	width: 100%;
+	height: 70vh;
+	background-color: #75ebcb;
+	display: flex;
+	flex-direction: column;
+}
+.artist-image-2 {
+	height: 80%;
+	width: 100%;
+	position: relative;
+}
+.song-description-section{
+	margin: 1% 1%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height:100vh;
+}
+.song-description-header{
+	width: 100%;
+	height: 20%;
+	display: flex;
+	justify-content: space-between;	
+}
+.discription{
+	width: 100%;
+	height: 60%;
+	text-align: justify;
+
+}
+.discription h5{
+	font-weight: 500;
+	margin: 1% 0%;
+	font-size: 1.3rem;
+
+}
+
+.discription p{
+	font-size: 1.2rem;
+}
+.play-all-button{
+	width: 80%;
+	height: 20%;
+	display: flex;
+}
+.play-all-button .play-b .btn h4{
+	font-size: 1.6rem;
+}
+
+.no-of-tracks{
+	font-size: 0.8rem;
+}
+
+.follow h5{
+	font-size: 1.2rem;
+}
+
+
+.list-of-artist-songs{
+	height: 60vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+	padding: 1% 0%;
+}
+
+.list-of-artist-songs .song{
+	width: 100%;
+	height:15%;
+
+}
+
+
+.song-no-image-name{
+	width: 30%;
+	font-size: 0.8rem;
+}
+
+.song-no-image-name .song-number{
+	font-size: 0.9rem;
+
+}
+
+.song-no-image-name  .song-image-container{
+	height: 100%; 
+	width: 40%;
+	padding: 5px 6px	;
+}
+
+.song-name-singer .song-name{
+	font-size: 0.9rem;
+}
+
+.song-name-singer  .singer-name{
+	font-size: 0.7rem;
+}
+
+.song .song-duration{
+	font-size: 0.9rem;
+}
+
+.like-and-add-btn{
+	height: 100%;
+	width: 10%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.like-and-add-btn .far,
+.like-and-add-btn .fas{
+}
+
+
+
+/*--------------sound control bar--------------*/
+
+.part-1, .part-3{
+	display: none;
+}
+.part-2{
+	width: 100%;
+	justify-content: space-around;
+}
+.part-2 .controls > ul{
+	justify-content: space-around;
+
+}
+.part-2 .controls > ul li{
+	background-color: transparent;
+}
+
+.part-2 .controls > ul li .fas{
+	font-size: 2rem;
+	background-color: transparent;
+
+}
+
+.part-2 .duration-bar{
+	display: flex;
+	height: 50%;
+	width: 90%;
+	align-items: center;
+	background-color: transparent;
+}
+
+.part-2 .duration-bar .duration-start,
+.part-2 .duration-bar .duration-end{
+	height: 50%;
+	width: 10%;
+	font-size: 1rem;
+	font-weight: bold;
+	margin: 0% 0%;
+	text-align: center;
+	background-color: transparent;
+
+}
+
+.part-2 .duration-bar .range-bar{
+	width: 100%;
+	background-color: transparent;
+
+}
+.part-2 .duration-bar .range-bar input{
+	width: 100%;
+	background-color: transparent;
+}
+.part-2 .duration-bar .range-bar input font{
+	background-color: transparent;
+}
+
+
+}
+
+
+@media screen and (max-width: 450px){
+
+	.play-all-button{
+		flex-direction: column;
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1100px){
+	#song-list, aside{
+			width: 100%;
+			margin-top: 10%;
+
+	}
+
+	main{
+		flex-direction: column;
+	}
+	
+	.body-section{
+	width: 100%;
+  }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
